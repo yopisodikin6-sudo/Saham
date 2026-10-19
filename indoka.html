@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>YOPZ PRO</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:#000;color:#FAFAFA;font-family:'Geist',-apple-system,BlinkMacSystemFont,sans-serif;overflow-x:hidden}
+.app{max-width:420px;margin:0 auto;min-height:100vh;background:radial-gradient(120% 80% at 50% -10%, #1A1033 0%, #0A0A0E 40%, #000 100%);position:relative;padding-bottom:90px}
+
+/* LIQUID GLASS EFFECT IPHONE 18 PRO MAX */
+.glass{backdrop-filter:blur(24px) saturate(1.8);-webkit-backdrop-filter:blur(24px) saturate(1.8)}
+.bounce{animation:iosPop .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes iosPop{0%{transform:scale(1)}30%{transform:scale(.94)}60%{transform:scale(1.06)}100%{transform:scale(1)}}
+
+/* IPHONE 18 SUPERELLIPSE ICON - APP STORE STYLE */
+.app-icon{width:60px;height:60px;border-radius:22px;position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;isolation:isolate}
+.app-icon::before{content:'';position:absolute;inset:0;border-radius:22px;background:linear-gradient(180deg, rgba(255,255,255,.28) 0%, rgba(255,255,255,0) 38%);z-index:2;pointer-events:none}
+.app-icon::after{content:'';position:absolute;inset:0;border-radius:22px;box-shadow:inset 0 1px 1px rgba(255,255,255,.6), inset 0 -1px 2px rgba(0,0,0,.25), 0 0 0 .5px rgba(255,255,255,.15);z-index:3;pointer-events:none}
+.app-icon .shadow{position:absolute;bottom:-10px;left:10%;right:10%;height:20px;background:radial-gradient(ellipse, currentColor 0%, transparent 70%);filter:blur(12px);opacity:.45;z-index:0}
+
+.tt{background:radial-gradient(120% 120% at 30% 20%, #3A3A3C 0%, #000 70%);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.5), 0 2px 8px rgba(0,0,0,.4)}
+.ig{background:radial-gradient(120% 120% at 20% 100%, #FDF497 0%, #FD5949 30%, #D6249F 60%, #285AEB 90%);color:#fff;box-shadow:0 10px 30px rgba(214,36,159,.35), 0 2px 8px rgba(0,0,0,.3)}
+.fb{background:radial-gradient(120% 120% at 30% 20%, #5DA8FF 0%, #1877F2 60%);color:#fff;box-shadow:0 10px 30px rgba(24,119,242,.4)}
+.yt{background:radial-gradient(120% 120% at 30% 20%, #FF5A5A 0%, #FF0000 60%);color:#fff;box-shadow:0 10px 30px rgba(255,0,0,.4)}
+.wa{background:radial-gradient(120% 120% at 30% 20%, #4AFF8A 0%, #25D366 45%, #128C7E 100%);color:#fff;box-shadow:0 10px 30px rgba(37,211,102,.4)}
+
+.wrap{padding:18px;padding-top:24px}
+.label{font-family:'Geist Mono';font-size:10px;letter-spacing:.18em;color:#8E8E93;margin:0 0 12px 6px;text-transform:uppercase;font-weight:500}
+
+/* IPHONE 18 CARD - LIQUID GLASS */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.03) 100%);border:.5px solid rgba(255,255,255,.12);border-radius:24px;padding:14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .3s cubic-bezier(.2,.8,.2,1);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);box-shadow:0 8px 24px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.06) inset;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent)}
+.card.active{background:linear-gradient(180deg, rgba(124,58,237,.9) 0%, rgba(91,33,182,.9) 100%);border-color:rgba(167,139,250,.6);box-shadow:0 12px 32px rgba(124,58,237,.45), 0 0 0 .5px rgba(255,255,255,.2) inset, 0 1px 0 rgba(255,255,255,.3) inset;transform:scale(1.02)}
+.card b{font-size:13px;font-weight:600;letter-spacing:-.01em}
+.card s{font-size:10px;color:#8E8E93;text-decoration:none;display:block;margin-top:3px;font-family:'Geist Mono'}
+.card.active s{color:rgba(255,255,255,.7)}
+
+/* PANEL LIQUID GLASS */
+.panel{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));border:.5px solid rgba(255,255,255,.12);border-radius:28px;padding:18px;backdrop-filter:blur(24px) saturate(1.6);-webkit-backdrop-filter:blur(24px) saturate(1.6);box-shadow:0 16px 40px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.08) inset;position:relative;overflow:hidden}
+.panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent)}
+.panel-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.panel-h b{font-size:12px;font-weight:600;display:flex;align-items:center;gap:7px}
+.panel-h small{font-family:'Geist Mono';font-size:9px;background:rgba(255,255,255,.08);border:.5px solid rgba(255,255,255,.12);padding:5px 11px;border-radius:999px;color:#8E8E93;backdrop-filter:blur(12px)}
+.field{display:flex;gap:10px}
+.input{flex:1;height:46px;background:rgba(0,0,0,.4);border:.5px solid rgba(255,255,255,.12);border-radius:999px;padding:0 18px;color:#FAFAFA;font-size:13px;font-family:'Geist Mono';outline:none;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 4px 12px rgba(0,0,0,.2)}
+.input:focus{border-color:#7C3AED;box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 0 0 4px rgba(124,58,237,.2)}
+.btn-go{height:46px;padding:0 20px;background:#FFF;color:#000;border:none;border-radius:999px;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(255,255,255,.15), 0 1px 0 #fff inset}
+.btn{width:100%;height:46px;border-radius:999px;border:none;font-size:12.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;transition:.2s cubic-bezier(.2,.8,.2,1)}
+.btn-black{background:#FFF;color:#000;box-shadow:0 10px 24px rgba(255,255,255,.15), 0 1px 0 #fff inset}
+.btn-outline{background:rgba(255,255,255,.08);color:#FAFAFA;border:.5px solid rgba(255,255,255,.12);backdrop-filter:blur(12px)}
+.preview{margin-top:14px;background:rgba(0,0,0,.5);border:.5px solid rgba(255,255,255,.08);border-radius:20px;min-height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;backdrop-filter:blur(12px)}
+.preview.has{border-color:rgba(255,255,255,.15);background:#000}
+.preview video,.preview img{width:100%;max-height:380px;display:block}
+.hist-item{background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.08);border-radius:18px;padding:12px;display:flex;gap:11px;margin-bottom:9px;align-items:center;backdrop-filter:blur(16px);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.hist-thumb{width:46px;height:46px;background:rgba(255,255,255,.06);border-radius:12px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.hist-thumb img{width:100%;height:100%;object-fit:cover}
+.set-card{background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.08);border-radius:20px;padding:14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;cursor:pointer;text-decoration:none;color:#FAFAFA;backdrop-filter:blur(16px);box-shadow:0 8px 20px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.06) inset}
+.set-left{display:flex;align-items:center;gap:12px}
+.set-card b{font-size:12.5px;font-weight:600}
+.set-card s{font-size:10px;color:#8E8E93;text-decoration:none;font-family:'Geist Mono'}
+
+/* NAV LIQUID GLASS IPHONE 18 */
+.nav{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);width:calc(100% - 24px);max-width:390px;height:60px;background:rgba(28,28,30,.75);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);border:.5px solid rgba(255,255,255,.12);border-radius:999px;display:flex;justify-content:space-around;align-items:center;z-index:20;box-shadow:0 20px 40px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.12) inset}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;color:#8E8E93;min-width:60px;padding:8px 16px;border-radius:999px;transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.nav-item.active{background:#FFF;color:#000;box-shadow:0 8px 20px rgba(255,255,255,.2), 0 1px 0 #fff inset}
+.nav-item i{width:18px;height:18px}
+.nav-item span{font-size:9px;font-family:'Geist Mono';font-weight:500}
+.tab{display:none}.tab.active{display:block}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div class="tab active" id="tab-home"><div class="wrap">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+<div class="label" style="margin:0">Select Platform</div>
+<div style="font-family:Geist Mono;font-size:9px;background:rgba(255,255,255,.08);border:.5px solid rgba(255,255,255,.12);padding:6px 12px;border-radius:999px;color:#8E8E93" id="count">0 saved</div>
+</div>
+
+<div class="grid">
+<!-- TIKTOK IPHONE 18 APP STORE -->
+<div class="card" id="tt" onclick="tapEffect(this);pick('tt')">
+<div class="app-icon tt">
+<div class="shadow"></div>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.8.12V8.75a6.33 6.33 0 0 0-.8-.05A6.33 6.33 0 0 0 3.16 15a6.33 6.33 0 0 0 6.33 6.33A6.33 6.33 0 0 0 15.82 15V9.5a7.64 7.64 0 0 0 4.35 1.38V7.43a4.84 4.84 0 0 1-.58-.74z"/></svg>
+</div>
+<div><b>TikTok</b><s>No Watermark</s></div>
+</div>
+
+<!-- INSTAGRAM IPHONE 18 APP STORE -->
+<div class="card" id="ig" onclick="tapEffect(this);pick('ig')">
+<div class="app-icon ig">
+<div class="shadow"></div>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.22.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.22a3.82 3.82 0 0 1-.9 1.38 3.82 3.82 0 0 1-1.38.9c-.42.16-1.05.36-2.22.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.22-.41a3.8 3.8 0 0 1-1.38-.9 3.82 3.82 0 0 1-.9-1.38c-.16-.42-.36-1.05-.41-2.22C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.22.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.05-.36 2.22-.41C8.42 2.21 8.8 2.2 12 2.2zm0 3.88a5.12 5.12 0 1 0 0 10.24 5.12 5.12 0 0 0 0-10.24zm0 8.44a3.32 3.32 0 1 1 0-6.64 3.32 3.32 0 0 1 0 6.64zm5.23-8.68a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+</div>
+<div><b>Instagram</b><s>Reels HD</s></div>
+</div>
+
+<!-- FACEBOOK IPHONE 18 APP STORE -->
+<div class="card" id="fb" onclick="tapEffect(this);pick('fb')">
+<div class="app-icon fb">
+<div class="shadow"></div>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.12 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+</div>
+<div><b>Facebook</b><s>HD Video</s></div>
+</div>
+
+<!-- YOUTUBE IPHONE 18 APP STORE - SUPER JELAS -->
+<div class="card" id="yt" onclick="tapEffect(this);pick('yt')">
+<div class="app-icon yt">
+<div class="shadow"></div>
+<svg width="28" height="20" viewBox="0 0 28 20" fill="none" style="position:relative;z-index:1"><path d="M27.97 3.12C27.64 1.89 26.67.92 25.44.59 23.22 0 14.28 0 14.28 0S5.35 0 3.12.59C1.89.92.92 1.89.59 3.12 0 5.35 0 10 0 10s0 4.65.59 6.88c.33 1.23 1.3 2.2 2.53 2.53C5.35 20 14.28 20 14.28 20s8.94 0 11.16-.59c1.23-.33 2.2-1.3 2.53-2.53.59-2.23.59-6.88.59-6.88s0-4.65-.59-6.88Z" fill="white"/><path d="M19.2 10 9.66 4.5v11L19.2 10Z" fill="#FF0000"/></svg>
+</div>
+<div><b>YouTube</b><s>MP4 & MP3</s></div>
+</div>
+</div>
+
+<div class="label">Paste Link</div>
+<div class="panel"><div class="panel-h"><b><i data-lucide="link-2" style="width:12px;height:12px"></i><span id="tTitle">Select platform first</span></b><small id="badge">Ready</small></div><div class="field"><input class="input" id="url" placeholder="https://..."><button class="btn-go" onclick="tapEffect(this);go()"><i data-lucide="arrow-right" style="width:16px;height:16px"></i></button></div><div class="preview" id="pv"><i data-lucide="film" style="width:18px;height:18px;color:#3A3A3C"></i><p style="font-family:Geist Mono;font-size:10px;color:#636366;margin-top:6px">Preview will appear here</p></div><div id="act"></div></div>
+</div></div>
+
+<div class="tab" id="tab-history"><div class="wrap"><div class="label">History</div><div id="history-list"></div></div></div>
+<div class="tab" id="tab-settings"><div class="wrap"><div class="label">Settings</div><a class="set-card" href="https://whatsapp.com/channel/0029VagJ1z3GJP8MeT2pQc2w" target="_blank" onclick="tapEffect(this)"><div class="set-left"><div class="app-icon wa" style="width:44px;height:44px;border-radius:14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1"><path d="M19.05 4.94A9.9 9.9 0 0 0 12.02 2C6.52 2 2.05 6.47 2.05 11.97c0 1.76.46 3.48 1.33 4.99L2 22l5.19-1.36a9.88 9.88 0 0 0 4.83 1.23h.01c5.5 0 9.97-4.47 9.97-9.97a9.89 9.89 0 0 0-2.95-7.02zm-7.03 15.44h-.01a8.22 8.22 0 0 1-4.19-1.15l-.3-.18-3.08.81.82-3-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.26 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.22-.08-.39-.12-.55.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.1-.1.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.42-.55-.42h-.47c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05s.89 2.38 1.01 2.54c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg></div><div><b>WhatsApp Channel</b><s>Official updates</s></div></div><i data-lucide="external-link" style="width:14px;height:14px;color:#636366"></i></a></div></div>
+
+<div class="nav"><div class="nav-item active" id="nav-home" onclick="tapEffect(this);switchTab('home')"><i data-lucide="layout-grid"></i><span>Beranda</span></div><div class="nav-item" id="nav-history" onclick="tapEffect(this);switchTab('history')"><i data-lucide="clock-3"></i><span>History</span></div><div class="nav-item" id="nav-settings" onclick="tapEffect(this);switchTab('settings')"><i data-lucide="settings-2"></i><span>Settings</span></div></div>
+</div>
+<script>
+lucide.createIcons();
+function tapEffect(el){el.classList.remove('bounce');void el.offsetWidth;el.classList.add('bounce');setTimeout(()=>el.classList.remove('bounce'),500)}
+let cur='',historyData=JSON.parse(localStorage.getItem('yopz_hist')||'[]');
+function saveHist(){localStorage.setItem('yopz_hist',JSON.stringify(historyData));renderHistory();document.getElementById('count').innerText=historyData.length+' saved'}
+function renderHistory(){let c=document.getElementById('history-list');if(!historyData.length){c.innerHTML='<div style="padding:30px;text-align:center;color:#636366;font-size:11px;font-family:Geist Mono">No history yet</div>';return}c.innerHTML=historyData.map((h,i)=>`<div class="hist-item"><div class="hist-thumb">${h.thumb?`<img src="${h.thumb}">`:`<i data-lucide="film" style="width:16px;height:16px;color:#636366"></i>`}</div><div style="flex:1;min-width:0"><b style="font-size:11px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${h.name}</b><s style="font-size:9px;color:#8E8E93;text-decoration:none;font-family:Geist Mono">${h.type} • ${h.time}</s></div><div style="width:28px;height:28px;background:rgba(255,255,255,.08);border-radius:9px;display:flex;align-items:center;justify-content:center;cursor:pointer" onclick="tapEffect(this);delHist(${i})"><i data-lucide="x" style="width:12px;height:12px"></i></div></div>`).join('');lucide.createIcons();}
+function delHist(i){historyData.splice(i,1);saveHist()}
+function switchTab(t){document.querySelectorAll('.tab').forEach(e=>e.classList.remove('active'));document.querySelectorAll('.nav-item').forEach(e=>e.classList.remove('active'));document.getElementById('tab-'+t).classList.add('active');document.getElementById('nav-'+t).classList.add('active');if(t=='history')renderHistory()}
+function pick(t){cur=t;document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));document.getElementById(t).classList.add('active');document.getElementById('tTitle').innerText=t+' • ready'}
+async function saveFile(url,name,type,thumb){try{let r=await fetch(url);let b=await r.blob();let u=URL.createObjectURL(b);let a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);historyData.unshift({name,type:type=='v'?'Video':'MP3',time:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}),thumb:thumb||''});saveHist();}catch{window.open(url,'_blank')}}
+async function go(){let u=document.getElementById('url').value.trim();let pv=document.getElementById('pv');let act=document.getElementById('act');if(!cur||!u)return;pv.className='preview';pv.innerHTML='<p style="font-size:10px;color:#8E8E93">Loading...</p>';try{if(cur=='yt'){let id=u.match(/(?:v=|shorts\/|youtu\.be\/)([^&]{6,11})/)?.[1];if(!id)throw 0;let thumb='https://img.youtube.com/vi/'+id+'/hqdefault.jpg';pv.className='preview has';pv.innerHTML='<img src="'+thumb+'">';act.innerHTML='<button class="btn btn-black" onclick="tapEffect(this);window.open(\'https://www.y2mate.is/youtube/'+id+'\')"><i data-lucide="download"></i> Download</button><button class="btn btn-outline" onclick="tapEffect(this);window.open(\'https://www.y2mate.is/youtube/'+id+'\')"><i data-lucide="music"></i> MP3</button>'}else{let r=await fetch('https://www.tikwm.com/api/?url='+encodeURIComponent(u)+'&hd=1');let j=await r.json();if(!j.data?.play)throw 0;let V=j.data.play;let A=j.data.music;let thumb=j.data.cover||'';pv.className='preview has';pv.innerHTML='<video src="'+V+'" controls playsinline></video>';act.innerHTML=`<button class="btn btn-black" onclick="tapEffect(this);saveFile('${V}','yopz-${Date.now()}.mp4','v','${thumb}')"><i data-lucide="download"></i> No Watermark</button><button class="btn btn-outline" onclick="tapEffect(this);saveFile('${A}','yopz-${Date.now()}.mp3','a','${thumb}')"><i data-lucide="music"></i> MP3</button>`}lucide.createIcons();}catch{pv.innerHTML='<p style="font-size:10px;color:#FF453A">Link tidak valid</p>'}}
+saveHist();
+</script>
+</body>
+</html><!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>YOPZ PRO</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:#000;color:#FAFAFA;font-family:'Geist',-apple-system,BlinkMacSystemFont,sans-serif;overflow-x:hidden}
+.app{max-width:420px;margin:0 auto;min-height:100vh;background:radial-gradient(120% 80% at 50% -10%, #1A1033 0%, #0A0A0E 40%, #000 100%);position:relative;padding-bottom:90px}
+
+/* LIQUID GLASS EFFECT IPHONE 18 PRO MAX */
+.glass{backdrop-filter:blur(24px) saturate(1.8);-webkit-backdrop-filter:blur(24px) saturate(1.8)}
+.bounce{animation:iosPop .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes iosPop{0%{transform:scale(1)}30%{transform:scale(.94)}60%{transform:scale(1.06)}100%{transform:scale(1)}}
+
+/* IPHONE 18 SUPERELLIPSE ICON - APP STORE STYLE */
+.app-icon{width:60px;height:60px;border-radius:22px;position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;isolation:isolate}
+.app-icon::before{content:'';position:absolute;inset:0;border-radius:22px;background:linear-gradient(180deg, rgba(255,255,255,.28) 0%, rgba(255,255,255,0) 38%);z-index:2;pointer-events:none}
+.app-icon::after{content:'';position:absolute;inset:0;border-radius:22px;box-shadow:inset 0 1px 1px rgba(255,255,255,.6), inset 0 -1px 2px rgba(0,0,0,.25), 0 0 0 .5px rgba(255,255,255,.15);z-index:3;pointer-events:none}
+.app-icon .shadow{position:absolute;bottom:-10px;left:10%;right:10%;height:20px;background:radial-gradient(ellipse, currentColor 0%, transparent 70%);filter:blur(12px);opacity:.45;z-index:0}
+
+.tt{background:radial-gradient(120% 120% at 30% 20%, #3A3A3C 0%, #000 70%);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.5), 0 2px 8px rgba(0,0,0,.4)}
+.ig{background:radial-gradient(120% 120% at 20% 100%, #FDF497 0%, #FD5949 30%, #D6249F 60%, #285AEB 90%);color:#fff;box-shadow:0 10px 30px rgba(214,36,159,.35), 0 2px 8px rgba(0,0,0,.3)}
+.fb{background:radial-gradient(120% 120% at 30% 20%, #5DA8FF 0%, #1877F2 60%);color:#fff;box-shadow:0 10px 30px rgba(24,119,242,.4)}
+.yt{background:radial-gradient(120% 120% at 30% 20%, #FF5A5A 0%, #FF0000 60%);color:#fff;box-shadow:0 10px 30px rgba(255,0,0,.4)}
+.wa{background:radial-gradient(120% 120% at 30% 20%, #4AFF8A 0%, #25D366 45%, #128C7E 100%);color:#fff;box-shadow:0 10px 30px rgba(37,211,102,.4)}
+
+.wrap{padding:18px;padding-top:24px}
+.label{font-family:'Geist Mono';font-size:10px;letter-spacing:.18em;color:#8E8E93;margin:0 0 12px 6px;text-transform:uppercase;font-weight:500}
+
+/* IPHONE 18 CARD - LIQUID GLASS */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.03) 100%);border:.5px solid rgba(255,255,255,.12);border-radius:24px;padding:14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .3s cubic-bezier(.2,.8,.2,1);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);box-shadow:0 8px 24px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.06) inset;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent)}
+.card.active{background:linear-gradient(180deg, rgba(124,58,237,.9) 0%, rgba(91,33,182,.9) 100%);border-color:rgba(167,139,250,.6);box-shadow:0 12px 32px rgba(124,58,237,.45), 0 0 0 .5px rgba(255,255,255,.2) inset, 0 1px 0 rgba(255,255,255,.3) inset;transform:scale(1.02)}
+.card b{font-size:13px;font-weight:600;letter-spacing:-.01em}
+.card s{font-size:10px;color:#8E8E93;text-decoration:none;display:block;margin-top:3px;font-family:'Geist Mono'}
+.card.active s{color:rgba(255,255,255,.7)}
+
+/* PANEL LIQUID GLASS */
+.panel{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));border:.5px solid rgba(255,255,255,.12);border-radius:28px;padding:18px;backdrop-filter:blur(24px) saturate(1.6);-webkit-backdrop-filter:blur(24px) saturate(1.6);box-shadow:0 16px 40px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.08) inset;position:relative;overflow:hidden}
+.panel::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent)}
+.panel-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.panel-h b{font-size:12px;font-weight:600;display:flex;align-items:center;gap:7px}
+.panel-h small{font-family:'Geist Mono';font-size:9px;background:rgba(255,255,255,.08);border:.5px solid rgba(255,255,255,.12);padding:5px 11px;border-radius:999px;color:#8E8E93;backdrop-filter:blur(12px)}
+.field{display:flex;gap:10px}
+.input{flex:1;height:46px;background:rgba(0,0,0,.4);border:.5px solid rgba(255,255,255,.12);border-radius:999px;padding:0 18px;color:#FAFAFA;font-size:13px;font-family:'Geist Mono';outline:none;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 4px 12px rgba(0,0,0,.2)}
+.input:focus{border-color:#7C3AED;box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 0 0 4px rgba(124,58,237,.2)}
+.btn-go{height:46px;padding:0 20px;background:#FFF;color:#000;border:none;border-radius:999px;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(255,255,255,.15), 0 1px 0 #fff inset}
+.btn{width:100%;height:46px;border-radius:999px;border:none;font-size:12.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;transition:.2s cubic-bezier(.2,.8,.2,1)}
+.btn-black{background:#FFF;color:#000;box-shadow:0 10px 24px rgba(255,255,255,.15), 0 1px 0 #fff inset}
+.btn-outline{background:rgba(255,255,255,.08);color:#FAFAFA;border:.5px solid rgba(255,255,255,.12);backdrop-filter:blur(12px)}
+.preview{margin-top:14px;background:rgba(0,0,0,.5);border:.5px solid rgba(255,255,255,.08);border-radius:20px;min-height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;backdrop-filter:blur(12px)}
+.preview.has{border-color:rgba(255,255,255,.15);background:#000}
+.preview video,.preview img{width:100%;max-height:380px;display:block}
+.hist-item{background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.08);border-radius:18px;padding:12px;display:flex;gap:11px;margin-bottom:9px;align-items:center;backdrop-filter:blur(16px);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.hist-thumb{width:46px;height:46px;background:rgba(255,255,255,.06);border-radius:12px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.hist-thumb img{width:100%;height:100%;object-fit:cover}
+.set-card{background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.08);border-radius:20px;padding:14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;cursor:pointer;text-decoration:none;color:#FAFAFA;backdrop-filter:blur(16px);box-shadow:0 8px 20px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.06) inset}
+.set-left{display:flex;align-items:center;gap:12px}
+.set-card b{font-size:12.5px;font-weight:600}
+.set-card s{font-size:10px;color:#8E8E93;text-decoration:none;font-family:'Geist Mono'}
+
+/* NAV LIQUID GLASS IPHONE 18 */
+.nav{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);width:calc(100% - 24px);max-width:390px;height:60px;background:rgba(28,28,30,.75);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);border:.5px solid rgba(255,255,255,.12);border-radius:999px;display:flex;justify-content:space-around;align-items:center;z-index:20;box-shadow:0 20px 40px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.12) inset}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;color:#8E8E93;min-width:60px;padding:8px 16px;border-radius:999px;transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.nav-item.active{background:#FFF;color:#000;box-shadow:0 8px 20px rgba(255,255,255,.2), 0 1px 0 #fff inset}
+.nav-item i{width:18px;height:18px}
+.nav-item span{font-size:9px;font-family:'Geist Mono';font-weight:500}
+.tab{display:none}.tab.active{display:block}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div class="tab active" id="tab-home"><div class="wrap">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+<div class="label" style="margin:0">Select Platform</div>
+<div style="font-family:Geist Mono;font-size:9px;background:rgba(255,255,255,.08);border:.5px solid rgba(255,255,255,.12);padding:6px 12px;border-radius:999px;color:#8E8E93" id="count">0 saved</div>
+</div>
+
+<div class="grid">
+<!-- TIKTOK IPHONE 18 APP STORE -->
+<div class="card" id="tt" onclick="tapEffect(this);pick('tt')">
+<div class="app-icon tt">
+<div class="shadow"></div>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.8.12V8.75a6.33 6.33 0 0 0-.8-.05A6.33 6.33 0 0 0 3.16 15a6.33 6.33 0 0 0 6.33 6.33A6.33 6.33 0 0 0 15.82 15V9.5a7.64 7.64 0 0 0 4.35 1.38V7.43a4.84 4.84 0 0 1-.58-.74z"/></svg>
+</div>
+<div><b>TikTok</b><s>No Watermark</s></div>
+</div>
+
+<!-- INSTAGRAM IPHONE 18 APP STORE -->
+<div class="card" id="ig" onclick="tapEffect(this);pick('ig')">
+<div class="app-icon ig">
+<div class="shadow"></div>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.22.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.22a3.82 3.82 0 0 1-.9 1.38 3.82 3.82 0 0 1-1.38.9c-.42.16-1.05.36-2.22.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.22-.41a3.8 3.8 0 0 1-1.38-.9 3.82 3.82 0 0 1-.9-1.38c-.16-.42-.36-1.05-.41-2.22C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.22.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.05-.36 2.22-.41C8.42 2.21 8.8 2.2 12 2.2zm0 3.88a5.12 5.12 0 1 0 0 10.24 5.12 5.12 0 0 0 0-10.24zm0 8.44a3.32 3.32 0 1 1 0-6.64 3.32 3.32 0 0 1 0 6.64zm5.23-8.68a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+</div>
+<div><b>Instagram</b><s>Reels HD</s></div>
+</div>
+
+<!-- FACEBOOK IPHONE 18 APP STORE -->
+<div class="card" id="fb" onclick="tapEffect(this);pick('fb')">
+<div class="app-icon fb">
+<div class="shadow"></div>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.12 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+</div>
+<div><b>Facebook</b><s>HD Video</s></div>
+</div>
+
+<!-- YOUTUBE IPHONE 18 APP STORE - SUPER JELAS -->
+<div class="card" id="yt" onclick="tapEffect(this);pick('yt')">
+<div class="app-icon yt">
+<div class="shadow"></div>
+<svg width="28" height="20" viewBox="0 0 28 20" fill="none" style="position:relative;z-index:1"><path d="M27.97 3.12C27.64 1.89 26.67.92 25.44.59 23.22 0 14.28 0 14.28 0S5.35 0 3.12.59C1.89.92.92 1.89.59 3.12 0 5.35 0 10 0 10s0 4.65.59 6.88c.33 1.23 1.3 2.2 2.53 2.53C5.35 20 14.28 20 14.28 20s8.94 0 11.16-.59c1.23-.33 2.2-1.3 2.53-2.53.59-2.23.59-6.88.59-6.88s0-4.65-.59-6.88Z" fill="white"/><path d="M19.2 10 9.66 4.5v11L19.2 10Z" fill="#FF0000"/></svg>
+</div>
+<div><b>YouTube</b><s>MP4 & MP3</s></div>
+</div>
+</div>
+
+<div class="label">Paste Link</div>
+<div class="panel"><div class="panel-h"><b><i data-lucide="link-2" style="width:12px;height:12px"></i><span id="tTitle">Select platform first</span></b><small id="badge">Ready</small></div><div class="field"><input class="input" id="url" placeholder="https://..."><button class="btn-go" onclick="tapEffect(this);go()"><i data-lucide="arrow-right" style="width:16px;height:16px"></i></button></div><div class="preview" id="pv"><i data-lucide="film" style="width:18px;height:18px;color:#3A3A3C"></i><p style="font-family:Geist Mono;font-size:10px;color:#636366;margin-top:6px">Preview will appear here</p></div><div id="act"></div></div>
+</div></div>
+
+<div class="tab" id="tab-history"><div class="wrap"><div class="label">History</div><div id="history-list"></div></div></div>
+<div class="tab" id="tab-settings"><div class="wrap"><div class="label">Settings</div><a class="set-card" href="https://whatsapp.com/channel/0029VagJ1z3GJP8MeT2pQc2w" target="_blank" onclick="tapEffect(this)"><div class="set-left"><div class="app-icon wa" style="width:44px;height:44px;border-radius:14px"><svg width="22" height="22" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1"><path d="M19.05 4.94A9.9 9.9 0 0 0 12.02 2C6.52 2 2.05 6.47 2.05 11.97c0 1.76.46 3.48 1.33 4.99L2 22l5.19-1.36a9.88 9.88 0 0 0 4.83 1.23h.01c5.5 0 9.97-4.47 9.97-9.97a9.89 9.89 0 0 0-2.95-7.02zm-7.03 15.44h-.01a8.22 8.22 0 0 1-4.19-1.15l-.3-.18-3.08.81.82-3-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.26 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.22-.08-.39-.12-.55.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.1-.1.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.42-.55-.42h-.47c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05s.89 2.38 1.01 2.54c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg></div><div><b>WhatsApp Channel</b><s>Official updates</s></div></div><i data-lucide="external-link" style="width:14px;height:14px;color:#636366"></i></a></div></div>
+
+<div class="nav"><div class="nav-item active" id="nav-home" onclick="tapEffect(this);switchTab('home')"><i data-lucide="layout-grid"></i><span>Beranda</span></div><div class="nav-item" id="nav-history" onclick="tapEffect(this);switchTab('history')"><i data-lucide="clock-3"></i><span>History</span></div><div class="nav-item" id="nav-settings" onclick="tapEffect(this);switchTab('settings')"><i data-lucide="settings-2"></i><span>Settings</span></div></div>
+</div>
+<script>
+lucide.createIcons();
+function tapEffect(el){el.classList.remove('bounce');void el.offsetWidth;el.classList.add('bounce');setTimeout(()=>el.classList.remove('bounce'),500)}
+let cur='',historyData=JSON.parse(localStorage.getItem('yopz_hist')||'[]');
+function saveHist(){localStorage.setItem('yopz_hist',JSON.stringify(historyData));renderHistory();document.getElementById('count').innerText=historyData.length+' saved'}
+function renderHistory(){let c=document.getElementById('history-list');if(!historyData.length){c.innerHTML='<div style="padding:30px;text-align:center;color:#636366;font-size:11px;font-family:Geist Mono">No history yet</div>';return}c.innerHTML=historyData.map((h,i)=>`<div class="hist-item"><div class="hist-thumb">${h.thumb?`<img src="${h.thumb}">`:`<i data-lucide="film" style="width:16px;height:16px;color:#636366"></i>`}</div><div style="flex:1;min-width:0"><b style="font-size:11px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${h.name}</b><s style="font-size:9px;color:#8E8E93;text-decoration:none;font-family:Geist Mono">${h.type} • ${h.time}</s></div><div style="width:28px;height:28px;background:rgba(255,255,255,.08);border-radius:9px;display:flex;align-items:center;justify-content:center;cursor:pointer" onclick="tapEffect(this);delHist(${i})"><i data-lucide="x" style="width:12px;height:12px"></i></div></div>`).join('');lucide.createIcons();}
+function delHist(i){historyData.splice(i,1);saveHist()}
+function switchTab(t){document.querySelectorAll('.tab').forEach(e=>e.classList.remove('active'));document.querySelectorAll('.nav-item').forEach(e=>e.classList.remove('active'));document.getElementById('tab-'+t).classList.add('active');document.getElementById('nav-'+t).classList.add('active');if(t=='history')renderHistory()}
+function pick(t){cur=t;document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));document.getElementById(t).classList.add('active');document.getElementById('tTitle').innerText=t+' • ready'}
+async function saveFile(url,name,type,thumb){try{let r=await fetch(url);let b=await r.blob();let u=URL.createObjectURL(b);let a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);historyData.unshift({name,type:type=='v'?'Video':'MP3',time:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}),thumb:thumb||''});saveHist();}catch{window.open(url,'_blank')}}
+async function go(){let u=document.getElementById('url').value.trim();let pv=document.getElementById('pv');let act=document.getElementById('act');if(!cur||!u)return;pv.className='preview';pv.innerHTML='<p style="font-size:10px;color:#8E8E93">Loading...</p>';try{if(cur=='yt'){let id=u.match(/(?:v=|shorts\/|youtu\.be\/)([^&]{6,11})/)?.[1];if(!id)throw 0;let thumb='https://img.youtube.com/vi/'+id+'/hqdefault.jpg';pv.className='preview has';pv.innerHTML='<img src="'+thumb+'">';act.innerHTML='<button class="btn btn-black" onclick="tapEffect(this);window.open(\'https://www.y2mate.is/youtube/'+id+'\')"><i data-lucide="download"></i> Download</button><button class="btn btn-outline" onclick="tapEffect(this);window.open(\'https://www.y2mate.is/youtube/'+id+'\')"><i data-lucide="music"></i> MP3</button>'}else{let r=await fetch('https://www.tikwm.com/api/?url='+encodeURIComponent(u)+'&hd=1');let j=await r.json();if(!j.data?.play)throw 0;let V=j.data.play;let A=j.data.music;let thumb=j.data.cover||'';pv.className='preview has';pv.innerHTML='<video src="'+V+'" controls playsinline></video>';act.innerHTML=`<button class="btn btn-black" onclick="tapEffect(this);saveFile('${V}','yopz-${Date.now()}.mp4','v','${thumb}')"><i data-lucide="download"></i> No Watermark</button><button class="btn btn-outline" onclick="tapEffect(this);saveFile('${A}','yopz-${Date.now()}.mp3','a','${thumb}')"><i data-lucide="music"></i> MP3</button>`}lucide.createIcons();}catch{pv.innerHTML='<p style="font-size:10px;color:#FF453A">Link tidak valid</p>'}}
+saveHist();
+</script>
+</body>
+</html>
